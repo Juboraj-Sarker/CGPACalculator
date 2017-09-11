@@ -1,0 +1,822 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.juborajsarker.cgpacalculator.fragment.CGPAFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="3dp"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_background_design"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Semester "
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_background_design"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Credit"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_background_design"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="SGPA"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <ScrollView
+                android:id="@+id/scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:id="@+id/c_raw_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:id="@+id/c_semester_TV1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:padding="5dp"
+                                android:text="Semester 1"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/c_credit_ET1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="Credit"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/c_sgpa_ET1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="SGPA"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/c_raw_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:id="@+id/c_semester_TV2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:text="Semester 2"/>
+
+                            <EditText
+                                android:id="@+id/c_credit_ET2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="Credit"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/c_sgpa_ET2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="SGPA"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:id="@+id/c_raw_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/c_semester_TV3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:text="Semester 3"/>
+
+                            <EditText
+                                android:id="@+id/c_credit_ET3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="Credit"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/c_sgpa_ET3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="SGPA"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/c_raw_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/c_semester_TV4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:text="Semester 4"/>
+
+                            <EditText
+                                android:id="@+id/c_credit_ET4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="Credit"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/c_sgpa_ET4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="SGPA"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/c_raw_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/c_semester_TV5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:text="Semester 5"/>
+
+                            <EditText
+                                android:id="@+id/c_credit_ET5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="Credit"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/c_sgpa_ET5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="SGPA"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:id="@+id/c_raw_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/c_semester_TV6"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:text="Semester 6"/>
+
+                            <EditText
+                                android:id="@+id/c_credit_ET6"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="Credit"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/c_sgpa_ET6"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="SGPA"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:id="@+id/c_raw_7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/c_semester_TV7"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:text="Semester 7"/>
+
+                            <EditText
+                                android:id="@+id/c_credit_ET7"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="Credit"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/c_sgpa_ET7"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="SGPA"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:id="@+id/c_raw_8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/c_semester_TV8"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:text="Semester 8"/>
+
+                            <EditText
+                                android:id="@+id/c_credit_ET8"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="Credit"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/c_sgpa_ET8"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="SGPA"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:id="@+id/c_raw_9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/c_semester_TV9"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:text="Semester 9"/>
+
+                            <EditText
+                                android:id="@+id/c_credit_ET9"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="Credit"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/c_sgpa_ET9"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="SGPA"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:id="@+id/c_raw_10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/c_semester_TV10"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:text="Semester 10"/>
+
+                            <EditText
+                                android:id="@+id/c_credit_ET10"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="Credit"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/c_sgpa_ET10"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="SGPA"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/c_raw_11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/c_semester_TV11"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:text="Semester 11"/>
+
+                            <EditText
+                                android:id="@+id/c_credit_ET11"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="Credit"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/c_sgpa_ET11"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="SGPA"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:id="@+id/c_raw_12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/c_semester_TV12"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:text="Semester 12"/>
+
+                            <EditText
+                                android:id="@+id/c_credit_ET12"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="Credit"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/c_sgpa_ET12"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_design"
+                                android:hint="SGPA"
+                                android:inputType="numberDecimal"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:background="#fffffa"
+                        android:elevation="3dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+
+                        <TextView
+                            android:id="@+id/reset_semester_TV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorPrimary"
+                            android:clickable="true"
+                            android:paddingBottom="6dp"
+                            android:paddingTop="6dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:text="Reset"
+                            android:textColor="#fff"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"/>
+
+
+                        <TextView
+                            android:id="@+id/add_semester_TV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorPrimary"
+                            android:clickable="true"
+                            android:padding="6dp"
+                            android:textStyle="bold"
+                            android:text="Add Semester"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="#fff"
+                            android:gravity="center"
+                            android:textSize="15sp"
+                            android:layout_weight="1"/>
+
+
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/cgpa_calculate_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center_horizontal">
+
+
+            <TextView
+                android:id="@+id/cgpa_calculate_TV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:text="Calculate"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
+
+
+
+
+
