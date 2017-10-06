@@ -1,7 +1,6 @@
 package com.juborajsarker.cgpacalculator.fragment;
 
 
-import android.icu.text.DecimalFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -366,11 +365,27 @@ public class CGPAFragment extends Fragment {
 
 
 
-                DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-                float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
-                float finalTotalSGPA = Float.valueOf(decimalFormat.format(totalSGPA));
-                float finalCGPA = Float.valueOf(decimalFormat.format(cgpa));
+
+
+
+//                DecimalFormat decimalFormat = new DecimalFormat("#.##");
+//
+//                float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+//                float finalTotalSGPA = Float.valueOf(decimalFormat.format(totalSGPA));
+//                float finalCGPA = Float.valueOf(decimalFormat.format(cgpa));
+//
+//                ViewDialog2 alert2 = new ViewDialog2();
+//                alert2.showDialog(getActivity(),2, finalTotalCredit, finalTotalSGPA, finalCGPA);
+
+
+
+
+
+                String finalTotalCredit = String.format("%.2f", totalCredit);
+                String finalTotalSGPA = String.format("%.2f", totalSGPA);
+                String finalCGPA = String.format("%.2f", cgpa);
+
 
                 ViewDialog2 alert2 = new ViewDialog2();
                 alert2.showDialog(getActivity(),2, finalTotalCredit, finalTotalSGPA, finalCGPA);
@@ -444,11 +459,10 @@ public class CGPAFragment extends Fragment {
                     float totalSGPA = sgpa1 + sgpa2 + sgpa3;
 
 
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
+                    String finalTotalSGPA = String.format("%.2f", totalSGPA);
+                    String finalCGPA = String.format("%.2f", cgpa);
 
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
-                    float finalTotalSGPA = Float.valueOf(decimalFormat.format(totalSGPA));
-                    float finalCGPA = Float.valueOf(decimalFormat.format(cgpa));
 
                     ViewDialog2 alert2 = new ViewDialog2();
                     alert2.showDialog(getActivity(),3, finalTotalCredit, finalTotalSGPA, finalCGPA);
@@ -519,11 +533,12 @@ public class CGPAFragment extends Fragment {
                     float cgpa = totalPoint / totalCredit ;
 
                     float totalSGPA = sgpa1 + sgpa2 + sgpa3 + sgpa4;
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
-                    float finalTotalSGPA = Float.valueOf(decimalFormat.format(totalSGPA));
-                    float finalCGPA = Float.valueOf(decimalFormat.format(cgpa));
+
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
+                    String finalTotalSGPA = String.format("%.2f", totalSGPA);
+                    String finalCGPA = String.format("%.2f", cgpa);
+
 
                     ViewDialog2 alert2 = new ViewDialog2();
                     alert2.showDialog(getActivity(),4, finalTotalCredit, finalTotalSGPA, finalCGPA);
@@ -594,11 +609,12 @@ public class CGPAFragment extends Fragment {
                     float cgpa = totalPoint / totalCredit ;
 
                     float totalSGPA = sgpa1 + sgpa2 + sgpa3 + sgpa4 + sgpa5;
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
-                    float finalTotalSGPA = Float.valueOf(decimalFormat.format(totalSGPA));
-                    float finalCGPA = Float.valueOf(decimalFormat.format(cgpa));
+
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
+                    String finalTotalSGPA = String.format("%.2f", totalSGPA);
+                    String finalCGPA = String.format("%.2f", cgpa);
+
 
                     ViewDialog2 alert2 = new ViewDialog2();
                     alert2.showDialog(getActivity(),5, finalTotalCredit, finalTotalSGPA, finalCGPA);
@@ -614,7 +630,7 @@ public class CGPAFragment extends Fragment {
 
 
 
-        if (cRaw4.getVisibility() == View.VISIBLE){
+        if (cRaw7.getVisibility() == View.VISIBLE){
 
 
             if (cCredit7ET.getText().toString().equals("")){
@@ -671,11 +687,13 @@ public class CGPAFragment extends Fragment {
                     float cgpa = totalPoint / totalCredit ;
 
                     float totalSGPA = sgpa1 + sgpa2 + sgpa3 + sgpa4 + sgpa5 + sgpa6;
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
-                    float finalTotalSGPA = Float.valueOf(decimalFormat.format(totalSGPA));
-                    float finalCGPA = Float.valueOf(decimalFormat.format(cgpa));
+
+
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
+                    String finalTotalSGPA = String.format("%.2f", totalSGPA);
+                    String finalCGPA = String.format("%.2f", cgpa);
+
 
                     ViewDialog2 alert2 = new ViewDialog2();
                     alert2.showDialog(getActivity(),6, finalTotalCredit, finalTotalSGPA, finalCGPA);
@@ -749,11 +767,12 @@ public class CGPAFragment extends Fragment {
                     float cgpa = totalPoint / totalCredit ;
 
                     float totalSGPA = sgpa1 + sgpa2 + sgpa3 + sgpa4 + sgpa5 + sgpa6 + sgpa7;
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
-                    float finalTotalSGPA = Float.valueOf(decimalFormat.format(totalSGPA));
-                    float finalCGPA = Float.valueOf(decimalFormat.format(cgpa));
+
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
+                    String finalTotalSGPA = String.format("%.2f", totalSGPA);
+                    String finalCGPA = String.format("%.2f", cgpa);
+
 
                     ViewDialog2 alert2 = new ViewDialog2();
                     alert2.showDialog(getActivity(),7, finalTotalCredit, finalTotalSGPA, finalCGPA);
@@ -828,11 +847,13 @@ public class CGPAFragment extends Fragment {
                     float cgpa = totalPoint / totalCredit ;
 
                     float totalSGPA = sgpa1 + sgpa2 + sgpa3 + sgpa4 + sgpa5 + sgpa6 + sgpa7 + sgpa8;
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
-                    float finalTotalSGPA = Float.valueOf(decimalFormat.format(totalSGPA));
-                    float finalCGPA = Float.valueOf(decimalFormat.format(cgpa));
+
+
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
+                    String finalTotalSGPA = String.format("%.2f", totalSGPA);
+                    String finalCGPA = String.format("%.2f", cgpa);
+
 
                     ViewDialog2 alert2 = new ViewDialog2();
                     alert2.showDialog(getActivity(),8, finalTotalCredit, finalTotalSGPA, finalCGPA);
@@ -909,11 +930,13 @@ public class CGPAFragment extends Fragment {
                     float cgpa = totalPoint / totalCredit ;
 
                     float totalSGPA = sgpa1 + sgpa2 + sgpa3 + sgpa4 + sgpa5 + sgpa6 + sgpa7 + sgpa8 + sgpa9;
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
-                    float finalTotalSGPA = Float.valueOf(decimalFormat.format(totalSGPA));
-                    float finalCGPA = Float.valueOf(decimalFormat.format(cgpa));
+
+
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
+                    String finalTotalSGPA = String.format("%.2f", totalSGPA);
+                    String finalCGPA = String.format("%.2f", cgpa);
+
 
                     ViewDialog2 alert2 = new ViewDialog2();
                     alert2.showDialog(getActivity(),9, finalTotalCredit, finalTotalSGPA, finalCGPA);
@@ -991,11 +1014,13 @@ public class CGPAFragment extends Fragment {
                     float cgpa = totalPoint / totalCredit ;
 
                     float totalSGPA = sgpa1 + sgpa2 + sgpa3 + sgpa4 + sgpa5 + sgpa6 + sgpa7 + sgpa8 + sgpa9 + sgpa10;
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
-                    float finalTotalSGPA = Float.valueOf(decimalFormat.format(totalSGPA));
-                    float finalCGPA = Float.valueOf(decimalFormat.format(cgpa));
+
+
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
+                    String finalTotalSGPA = String.format("%.2f", totalSGPA);
+                    String finalCGPA = String.format("%.2f", cgpa);
+
 
                     ViewDialog2 alert2 = new ViewDialog2();
                     alert2.showDialog(getActivity(),10, finalTotalCredit, finalTotalSGPA, finalCGPA);
@@ -1076,11 +1101,13 @@ public class CGPAFragment extends Fragment {
                     float cgpa = totalPoint / totalCredit ;
 
                     float totalSGPA = sgpa1 + sgpa2 + sgpa3 + sgpa4 + sgpa5 + sgpa6 + sgpa7 + sgpa8 + sgpa9 + sgpa10 + sgpa11;
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
-                    float finalTotalSGPA = Float.valueOf(decimalFormat.format(totalSGPA));
-                    float finalCGPA = Float.valueOf(decimalFormat.format(cgpa));
+
+
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
+                    String finalTotalSGPA = String.format("%.2f", totalSGPA);
+                    String finalCGPA = String.format("%.2f", cgpa);
+
 
                     ViewDialog2 alert2 = new ViewDialog2();
                     alert2.showDialog(getActivity(),11, finalTotalCredit, finalTotalSGPA, finalCGPA);
@@ -1143,11 +1170,11 @@ public class CGPAFragment extends Fragment {
 
         float totalSGPA = sgpa1 + sgpa2 + sgpa3 + sgpa4 + sgpa5 + sgpa6 + sgpa7 + sgpa8 + sgpa9 + sgpa10 + sgpa11 + sgpa12;
 
-        DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-        float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
-        float finalTotalSGPA = Float.valueOf(decimalFormat.format(totalSGPA));
-        float finalCGPA = Float.valueOf(decimalFormat.format(cgpa));
+        String finalTotalCredit = String.format("%.2f", totalCredit);
+        String finalTotalSGPA = String.format("%.2f", totalSGPA);
+        String finalCGPA = String.format("%.2f", cgpa);
+
 
         ViewDialog2 alert2 = new ViewDialog2();
         alert2.showDialog(getActivity(),12, finalTotalCredit, finalTotalSGPA, finalCGPA);

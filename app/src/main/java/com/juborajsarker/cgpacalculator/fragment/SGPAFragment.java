@@ -1,7 +1,6 @@
 package com.juborajsarker.cgpacalculator.fragment;
 
 
-import android.icu.text.DecimalFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -445,15 +444,25 @@ public class SGPAFragment extends Fragment {
                 float totalPoint = point1 + point2;
                 float sGPA = totalPoint / totalCredit;
 
-                DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-                float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-                float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+               // DecimalFormat decimalFormat = new DecimalFormat("0.00");
+               // float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
+               // float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
+               // float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+
+
+//                String roundOffTo2DecPlaces(float val)
+//                {
+//                    return String.format("%.2f", val);
+//                }
+
+                String totalSGPA = String.format("%.2f", sGPA);
+                String finalTotalPoint = String.format("%.2f", totalPoint);
+                String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
                 ViewDialog alert = new ViewDialog();
-                alert.showDialog(getActivity(),2, finalTotalCredit, finalTotalPoint, finalSGPA);
+                alert.showDialog(getActivity(),2, finalTotalCredit, finalTotalPoint, totalSGPA);
             }
         }
 
@@ -490,15 +499,18 @@ public class SGPAFragment extends Fragment {
                     float totalPoint = point1 + point2 + point3;
                     float sGPA = totalPoint / totalCredit;
 
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                    float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-                    float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+
+
+
+
+                    String totalSGPA = String.format("%.2f", sGPA);
+                    String finalTotalPoint = String.format("%.2f", totalPoint);
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
                     ViewDialog alert = new ViewDialog();
-                    alert.showDialog(getActivity(),3, finalTotalCredit, finalTotalPoint, finalSGPA);
+                    alert.showDialog(getActivity(),3, finalTotalCredit, finalTotalPoint, totalSGPA);
                 }
 
 
@@ -539,15 +551,17 @@ public class SGPAFragment extends Fragment {
                     float totalPoint = point1 + point2 + point3 + point4;
                     float sGPA = totalPoint / totalCredit;
 
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                    float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-                    float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+
+
+
+                    String totalSGPA = String.format("%.2f", sGPA);
+                    String finalTotalPoint = String.format("%.2f", totalPoint);
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
                     ViewDialog alert = new ViewDialog();
-                    alert.showDialog(getActivity(),4, finalTotalCredit, finalTotalPoint, finalSGPA);
+                    alert.showDialog(getActivity(),4, finalTotalCredit, finalTotalPoint, totalSGPA);
                 }
 
 
@@ -594,15 +608,14 @@ public class SGPAFragment extends Fragment {
 
 
 
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                    float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-                    float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+                    String totalSGPA = String.format("%.2f", sGPA);
+                    String finalTotalPoint = String.format("%.2f", totalPoint);
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
                     ViewDialog alert = new ViewDialog();
-                    alert.showDialog(getActivity(),5, finalTotalCredit, finalTotalPoint, finalSGPA);
+                    alert.showDialog(getActivity(),5, finalTotalCredit, finalTotalPoint, totalSGPA);
 
                 }
 
@@ -649,15 +662,14 @@ public class SGPAFragment extends Fragment {
                     float totalPoint = point1 + point2 + point3 + point4 + point5 + point6;
                     float sGPA = totalPoint / totalCredit;
 
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                    float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-                    float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+                    String totalSGPA = String.format("%.2f", sGPA);
+                    String finalTotalPoint = String.format("%.2f", totalPoint);
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
                     ViewDialog alert = new ViewDialog();
-                    alert.showDialog(getActivity(),6, finalTotalCredit, finalTotalPoint, finalSGPA);
+                    alert.showDialog(getActivity(),6, finalTotalCredit, finalTotalPoint, totalSGPA);
                 }
 
             }
@@ -701,15 +713,14 @@ public class SGPAFragment extends Fragment {
                     float totalPoint = point1 + point2 + point3 + point4 + point5 + point6 + point7;
                     float sGPA = totalPoint / totalCredit;
 
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                    float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-                    float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+                    String totalSGPA = String.format("%.2f", sGPA);
+                    String finalTotalPoint = String.format("%.2f", totalPoint);
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
                     ViewDialog alert = new ViewDialog();
-                    alert.showDialog(getActivity(),7, finalTotalCredit, finalTotalPoint, finalSGPA);
+                    alert.showDialog(getActivity(),7, finalTotalCredit, finalTotalPoint, totalSGPA);
                 }
             }
         }
@@ -754,15 +765,14 @@ public class SGPAFragment extends Fragment {
                     float totalPoint = point1 + point2 + point3 + point4 + point5 + point6 + point7 + point8;
                     float sGPA = totalPoint / totalCredit;
 
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                    float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-                    float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+                    String totalSGPA = String.format("%.2f", sGPA);
+                    String finalTotalPoint = String.format("%.2f", totalPoint);
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
                     ViewDialog alert = new ViewDialog();
-                    alert.showDialog(getActivity(),8, finalTotalCredit, finalTotalPoint, finalSGPA);
+                    alert.showDialog(getActivity(),8, finalTotalCredit, finalTotalPoint, totalSGPA);
                 }
 
             }
@@ -810,15 +820,14 @@ public class SGPAFragment extends Fragment {
                     float totalPoint = point1 + point2 + point3 + point4 + point5 + point6 + point7 + point8 + point9;
                     float sGPA = totalPoint / totalCredit;
 
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                    float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-                    float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+                    String totalSGPA = String.format("%.2f", sGPA);
+                    String finalTotalPoint = String.format("%.2f", totalPoint);
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
                     ViewDialog alert = new ViewDialog();
-                    alert.showDialog(getActivity(),9, finalTotalCredit, finalTotalPoint, finalSGPA);
+                    alert.showDialog(getActivity(),9, finalTotalCredit, finalTotalPoint, totalSGPA);
                 }
 
             }
@@ -865,15 +874,14 @@ public class SGPAFragment extends Fragment {
                     float totalPoint = point1 + point2 + point3 + point4 + point5 + point6 + point7 + point8 + point9 + point10;
                     float sGPA = totalPoint / totalCredit;
 
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                    float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-                    float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+                    String totalSGPA = String.format("%.2f", sGPA);
+                    String finalTotalPoint = String.format("%.2f", totalPoint);
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
                     ViewDialog alert = new ViewDialog();
-                    alert.showDialog(getActivity(),10, finalTotalCredit, finalTotalPoint, finalSGPA);
+                    alert.showDialog(getActivity(),10, finalTotalCredit, finalTotalPoint, totalSGPA);
                 }
 
 
@@ -926,15 +934,14 @@ public class SGPAFragment extends Fragment {
                             point11;
                     float sGPA = totalPoint / totalCredit;
 
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                    float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-                    float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+                    String totalSGPA = String.format("%.2f", sGPA);
+                    String finalTotalPoint = String.format("%.2f", totalPoint);
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
                     ViewDialog alert = new ViewDialog();
-                    alert.showDialog(getActivity(),11, finalTotalCredit, finalTotalPoint, finalSGPA);
+                    alert.showDialog(getActivity(),11, finalTotalCredit, finalTotalPoint, totalSGPA);
                 }
 
             }
@@ -990,15 +997,14 @@ public class SGPAFragment extends Fragment {
 
                     float sGPA = totalPoint / totalCredit;
 
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                    float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-                    float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+                    String totalSGPA = String.format("%.2f", sGPA);
+                    String finalTotalPoint = String.format("%.2f", totalPoint);
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
                     ViewDialog alert = new ViewDialog();
-                    alert.showDialog(getActivity(),12, finalTotalCredit, finalTotalPoint, finalSGPA);
+                    alert.showDialog(getActivity(),12, finalTotalCredit, finalTotalPoint, totalSGPA);
                 }
 
             }
@@ -1057,15 +1063,14 @@ public class SGPAFragment extends Fragment {
 
                     float sGPA = totalPoint / totalCredit;
 
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                    float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-                    float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+                    String totalSGPA = String.format("%.2f", sGPA);
+                    String finalTotalPoint = String.format("%.2f", totalPoint);
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
                     ViewDialog alert = new ViewDialog();
-                    alert.showDialog(getActivity(),13, finalTotalCredit, finalTotalPoint, finalSGPA);
+                    alert.showDialog(getActivity(),13, finalTotalCredit, finalTotalPoint, totalSGPA);;
                 }
 
             }
@@ -1124,15 +1129,14 @@ public class SGPAFragment extends Fragment {
 
                     float sGPA = totalPoint / totalCredit;
 
-                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                    float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-                    float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-                    float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+                    String totalSGPA = String.format("%.2f", sGPA);
+                    String finalTotalPoint = String.format("%.2f", totalPoint);
+                    String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
                     ViewDialog alert = new ViewDialog();
-                    alert.showDialog(getActivity(),14, finalTotalCredit, finalTotalPoint, finalSGPA);
+                    alert.showDialog(getActivity(),14, finalTotalCredit, finalTotalPoint, totalSGPA);
 
                 }
 
@@ -1180,15 +1184,14 @@ public class SGPAFragment extends Fragment {
 
         float sGPA = totalPoint / totalCredit;
 
-        DecimalFormat decimalFormat = new DecimalFormat("#.##");
-        float finalSGPA = Float.valueOf(decimalFormat.format(sGPA));
-        float finalTotalPoint = Float.valueOf(decimalFormat.format(totalPoint));
-        float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
+        String totalSGPA = String.format("%.2f", sGPA);
+        String finalTotalPoint = String.format("%.2f", totalPoint);
+        String finalTotalCredit = String.format("%.2f", totalCredit);
 
 
 
         ViewDialog alert = new ViewDialog();
-        alert.showDialog(getActivity(),15, finalTotalCredit, finalTotalPoint, finalSGPA);
+        alert.showDialog(getActivity(),15, finalTotalCredit, finalTotalPoint, totalSGPA);
 
     }
 

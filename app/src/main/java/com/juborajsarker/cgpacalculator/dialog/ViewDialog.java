@@ -13,7 +13,7 @@ import com.juborajsarker.cgpacalculator.R;
 public class ViewDialog {
 
     public void showDialog (Activity activity,  int total_courses,
-                           float total_credits, float total_grades, float total_cgpa ){
+                           String total_credits, String total_grades, String total_cgpa ){
 
         final Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -29,9 +29,9 @@ public class ViewDialog {
 
 
         total_course.setText(String.valueOf(total_courses));
-        total_credit.setText(String.valueOf(total_credits));
-        total_grade.setText(String.valueOf(total_grades));
-        cgpa_tv.setText(String.valueOf(total_cgpa));
+        total_credit.setText(total_credits);
+        total_grade.setText(total_grades);
+        cgpa_tv.setText(total_cgpa);
 
 
         Button dialogButton = (Button) dialog.findViewById(R.id.btn_dialog);

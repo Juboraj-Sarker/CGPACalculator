@@ -122,12 +122,12 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     builder = new AlertDialog.Builder(this);
                 }
-                builder.setTitle("Are you sure?\nYou want to really exit?")
-                        .setMessage("----------------------------------------------------\nTouch on 'YES' button if you want to really exit.\n\nOtherwise touch on 'CANCEL' button if you don't want to exit.")
+                builder.setTitle("Thanks for using my app")
+                        .setMessage("\nAre you sure you want to really exit?")
                         .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
 
-                                System.exit(0);
+                                AppExit();
                             }
                         })
                         .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -135,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
                                 dialog.cancel();
                             }
                         })
-                        .setIcon(android.R.drawable.ic_dialog_alert)
                         .show();
 
 
@@ -143,6 +142,19 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+
+
+    }
+
+
+
+    public void AppExit() {
+
+        this.finish();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
 
 
     }
