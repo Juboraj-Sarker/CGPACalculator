@@ -373,6 +373,11 @@ public class SGPAFragment extends Fragment {
                 break;
             }
 
+            default:{
+
+                Toast.makeText(getContext(), "Maximum number of Course has been added", Toast.LENGTH_SHORT).show();
+            }
+
 
         }
     }

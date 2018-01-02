@@ -3,6 +3,8 @@ package com.juborajsarker.cgpacalculator.activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -24,6 +27,8 @@ public class AboutMeActivity extends AppCompatActivity {
 
     InterstitialAd mInterstitialAd;
 
+    TextView versionCodeTV, versionNameTV;
+
 
 
 
@@ -31,6 +36,23 @@ public class AboutMeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_me);
+
+        versionCodeTV = (TextView) findViewById(R.id.versionCode);
+        versionNameTV = (TextView) findViewById(R.id.versionName);
+
+
+        try {
+            PackageInfo pInfo = this.getPackageManager().getPackageInfo(getPackageName(), 0);
+            String vName = pInfo.versionName;
+            int vCode = pInfo.versionCode;
+
+            versionCodeTV.setText(String.valueOf(vCode));
+            versionNameTV.setText(vName);
+
+
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
 
 
 
@@ -171,46 +193,8 @@ public class AboutMeActivity extends AppCompatActivity {
     }
 
 
+    public void gotoWebActivity(View view) {
 
 
-    public void facebook(View view) {
-
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse("https://www.facebook.com/sarker.juboraj"));
-        startActivity(intent);
     }
-
-    public void googlePlus(View view) {
-
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse("https://plus.google.com/+JuborajSarker001"));
-        startActivity(intent);
-    }
-
-    public void twitter(View view) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse("https://twitter.com/juboraj_sarker"));
-        startActivity(intent);
-    }
-
-    public void linkedIn(View view) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse("https://www.linkedin.com/in/juboraj-sarker"));
-        startActivity(intent);
-    }
-
-
-
-
-
-
-
 }

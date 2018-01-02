@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -42,7 +41,8 @@
             android:src="@drawable/main_icon"
             android:layout_gravity="center"
             android:padding="8dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"/>
 
 
         <ScrollView
@@ -120,7 +120,7 @@
                         android:id="@+id/versionCode"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="5"
+                        android:text="6"
                         android:textColor="#aa000000"
                         android:textSize="18sp"
                         android:padding="8dp"
@@ -155,7 +155,7 @@
                         android:id="@+id/versionName"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="5.0"
+                        android:text="6.0"
                         android:textColor="#aa000000"
                         android:textSize="18sp"
                         android:padding="8dp"
@@ -189,12 +189,13 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Juboraj Sarker"
-                        android:textColor="#aa000000"
+                        android:text="@string/juboraj_sarker"
+                        android:textColor="#3b52d2"
                         android:textSize="18sp"
                         android:padding="8dp"
                         android:layout_weight="1"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:onClick="gotoWebActivity"/>
 
 
 
@@ -225,7 +226,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="21 October, 2017"
+                        android:text="25 October, 2017"
                         android:textColor="#aa000000"
                         android:textSize="18sp"
                         android:padding="8dp"

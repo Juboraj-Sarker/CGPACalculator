@@ -1,6 +1,7 @@
 package com.juborajsarker.cgpacalculator.fragment;
 
 
+
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -45,7 +46,14 @@ public class CGPAFragment extends Fragment {
     boolean finish = false;
     boolean permission1, permission2, permission3, permission4, permission5, permission6, permission7, permission8, permission9,
             permission10, permission11, permission12 = false;
-    boolean creditEmpty, sgpaEmpty = false;
+
+    boolean creditEmpty = false, sgpaEmpty = false;
+    boolean credit1Empty, credit2Empty, credit3Empty, credit4Empty, credit5Empty, credit6Empty, credit7Empty, credit8Empty, credit9Empty,
+            credit10Empty, credit11Empty , credit12Empty;
+    boolean sgpa1Empty, sgpa2Empty, sgpa3Empty, sgpa4Empty, sgpa5Empty, sgpa6Empty, sgpa7Empty,sgpa8Empty, sgpa9Empty,
+            sgpa10Empty, sgpa11Empty , sgpa12Empty;
+    boolean sgpaBoundaryCross = false;
+    boolean cross1, cross2, cross3, cross4, cross5, cross6, cross7, cross8, cross9, cross10, cross11, cross12;
 
     float credit1, credit2, credit3, credit4, credit5, credit6, credit7, credit8, credit9, credit10, credit11, credit12;
     float sgpa1, sgpa2, sgpa3, sgpa4, sgpa5, sgpa6, sgpa7, sgpa8, sgpa9, sgpa10, sgpa11, sgpa12;
@@ -151,6 +159,7 @@ public class CGPAFragment extends Fragment {
                     }
                 });
 
+
                 calculateCGPA();
             }
         });
@@ -171,6 +180,8 @@ public class CGPAFragment extends Fragment {
                 mInterstitialAd.setAdListener(new AdListener() {
                     public void onAdLoaded() {
                         showInterstitial();
+
+
                     }
                 });
 
@@ -314,14 +325,18 @@ public class CGPAFragment extends Fragment {
         if (cRaw3.getVisibility() == View.VISIBLE){
 
 
+            finish = false;
+
             if (cCredit3ET.getText().toString().equals("")){
 
-                creditEmpty = true;
+
+                credit3Empty = true;
                 cCredit3ET.setError("Required");
 
             }else {
 
-                creditEmpty = false;
+
+                credit3Empty = false;
                 credit3 = Float.parseFloat(cCredit3ET.getText().toString());
             }
 
@@ -329,13 +344,30 @@ public class CGPAFragment extends Fragment {
 
             if (cSGPA_ET3.getText().toString().equals("")){
 
-                sgpaEmpty = true;
+
+                sgpa3Empty = true;
                 cSGPA_ET3.setError("Required");
 
             }else {
 
-                sgpaEmpty = false;
-                sgpa3 = Float.parseFloat(cSGPA_ET3.getText().toString());
+
+
+                sgpa3Empty = false;
+                float sgpaBoundary = Float.parseFloat(cSGPA_ET3.getText().toString());
+
+                if (sgpaBoundary > 5.0){
+
+                    cSGPA_ET3.setError("SGPA can't greater than must 5.0");
+                    cross3 = true;
+
+                }else {
+
+
+                    sgpa3 = Float.parseFloat(cSGPA_ET3.getText().toString());
+
+                    cross3 = false;
+                }
+
             }
 
 
@@ -347,11 +379,11 @@ public class CGPAFragment extends Fragment {
 
         }else {
 
+            finish = true;
+
+            if ( !credit1Empty && !sgpa1Empty && !cross1 && !credit2Empty && !sgpa2Empty && !cross2 ){
 
 
-            if ( creditEmpty == false && sgpaEmpty == false){
-
-                finish = true;
 
                 float totalPoint1 = credit1 * sgpa1;
                 float totalPoint2 = credit2 * sgpa2;
@@ -365,23 +397,6 @@ public class CGPAFragment extends Fragment {
 
 
 
-
-
-
-
-//                DecimalFormat decimalFormat = new DecimalFormat("#.##");
-//
-//                float finalTotalCredit = Float.valueOf(decimalFormat.format(totalCredit));
-//                float finalTotalSGPA = Float.valueOf(decimalFormat.format(totalSGPA));
-//                float finalCGPA = Float.valueOf(decimalFormat.format(cgpa));
-//
-//                ViewDialog2 alert2 = new ViewDialog2();
-//                alert2.showDialog(getActivity(),2, finalTotalCredit, finalTotalSGPA, finalCGPA);
-
-
-
-
-
                 String finalTotalCredit = String.format("%.2f", totalCredit);
                 String finalTotalSGPA = String.format("%.2f", totalSGPA);
                 String finalCGPA = String.format("%.2f", cgpa);
@@ -390,10 +405,6 @@ public class CGPAFragment extends Fragment {
                 ViewDialog2 alert2 = new ViewDialog2();
                 alert2.showDialog(getActivity(),2, finalTotalCredit, finalTotalSGPA, finalCGPA);
 
-
-
-//                ViewDialog2 alert2 = new ViewDialog2();
-//                alert2.showDialog(getActivity(), 2, totalCredit, totalSGPA, cgpa);
 
             }
 
@@ -408,11 +419,11 @@ public class CGPAFragment extends Fragment {
 
             if (cCredit4ET.getText().toString().equals("")){
 
-                creditEmpty = true;
+                credit4Empty = true;
                 cCredit4ET.setError("Required");
             }else {
 
-                creditEmpty = false;
+                credit4Empty = false;
                 credit4 = Float.parseFloat(cCredit4ET.getText().toString());
             }
 
@@ -420,12 +431,26 @@ public class CGPAFragment extends Fragment {
 
             if (cSGPA_ET4.getText().toString().equals("")){
 
-                sgpaEmpty = true;
+                sgpa4Empty = true;
                 cSGPA_ET4.setError("Required");
+
             }else {
 
-                sgpaEmpty = false;
-                sgpa4 = Float.parseFloat(cSGPA_ET4.getText().toString());
+                sgpa4Empty = false;
+                float sgpaBoundary = Float.parseFloat(cSGPA_ET4.getText().toString());
+
+                if (sgpaBoundary > 5.0){
+
+                    cSGPA_ET4.setError("SGPA can't greater than must 5.0");
+                    cross4= true;
+
+                }else {
+
+
+                    sgpa4 = Float.parseFloat(cSGPA_ET4.getText().toString());
+
+                    cross4 = false;
+                }
             }
 
 
@@ -442,7 +467,9 @@ public class CGPAFragment extends Fragment {
             if (!finish || permission3){
 
 
-                if ( creditEmpty == false && sgpaEmpty == false){
+                if ( !credit1Empty && !sgpa1Empty && !cross1 &&
+                        !credit2Empty && !sgpa2Empty && !cross2  &&
+                        !credit3Empty && !sgpa3Empty && !cross3  ){
 
                     finish = true;
                     permission3 = true;
@@ -483,11 +510,11 @@ public class CGPAFragment extends Fragment {
 
             if (cCredit5ET.getText().toString().equals("")){
 
-                creditEmpty = true;
+                credit5Empty = true;
                 cCredit5ET.setError("Required");
             }else {
 
-                creditEmpty = false;
+                credit5Empty = false;
                 credit5 = Float.parseFloat(cCredit5ET.getText().toString());
             }
 
@@ -495,12 +522,26 @@ public class CGPAFragment extends Fragment {
 
             if (cSGPA_ET5.getText().toString().equals("")){
 
-                sgpaEmpty = true;
+                sgpa5Empty = true;
                 cSGPA_ET5.setError("Required");
+
             }else {
 
-                sgpaEmpty = false;
-                sgpa5 = Float.parseFloat(cSGPA_ET5.getText().toString());
+                sgpa5Empty = false;
+                float sgpaBoundary = Float.parseFloat(cSGPA_ET5.getText().toString());
+
+                if (sgpaBoundary > 5.0){
+
+                    cSGPA_ET5.setError("SGPA can't greater than must 5.0");
+                    cross5 = true;
+
+                }else {
+
+
+                    sgpa5 = Float.parseFloat(cSGPA_ET5.getText().toString());
+
+                    cross5 = false;
+                }
             }
 
 
@@ -517,7 +558,10 @@ public class CGPAFragment extends Fragment {
             if (!finish || permission4){
 
 
-                if ( creditEmpty == false && sgpaEmpty == false){
+                if ( !credit1Empty && !sgpa1Empty && !cross1 &&
+                        !credit2Empty && !sgpa2Empty && !cross2  &&
+                        !credit3Empty && !sgpa3Empty && !cross3 &&
+                        !credit4Empty && !sgpa4Empty && !cross4  ){
 
                     finish = true;
                     permission4 = true;
@@ -558,11 +602,11 @@ public class CGPAFragment extends Fragment {
 
             if (cCredit6ET.getText().toString().equals("")){
 
-                creditEmpty = true;
+                credit6Empty = true;
                 cCredit6ET.setError("Required");
             }else {
 
-                creditEmpty = false;
+                credit6Empty = false;
                 credit6 = Float.parseFloat(cCredit6ET.getText().toString());
             }
 
@@ -570,12 +614,25 @@ public class CGPAFragment extends Fragment {
 
             if (cSGPA_ET6.getText().toString().equals("")){
 
-                sgpaEmpty = true;
+                sgpa6Empty = true;
                 cSGPA_ET6.setError("Required");
             }else {
 
-                sgpaEmpty = false;
-                sgpa6 = Float.parseFloat(cSGPA_ET6.getText().toString());
+                sgpa6Empty = false;
+                float sgpaBoundary = Float.parseFloat(cSGPA_ET6.getText().toString());
+
+                if (sgpaBoundary > 5.0){
+
+                    cSGPA_ET6.setError("SGPA can't greater than must 5.0");
+                    cross6 = true;
+
+                }else {
+
+
+                    sgpa6 = Float.parseFloat(cSGPA_ET6.getText().toString());
+
+                    cross6 = false;
+                }
             }
 
 
@@ -592,7 +649,11 @@ public class CGPAFragment extends Fragment {
             if (!finish || permission5){
 
 
-                if ( creditEmpty == false && sgpaEmpty == false){
+                if ( !credit1Empty && !sgpa1Empty && !cross1 &&
+                        !credit2Empty && !sgpa2Empty && !cross2  &&
+                        !credit3Empty && !sgpa3Empty && !cross3 &&
+                        !credit4Empty && !sgpa4Empty && !cross4  &&
+                        !credit5Empty && !sgpa5Empty && !cross5  ){
 
                     finish = true;
                     permission5 = true;
@@ -635,11 +696,11 @@ public class CGPAFragment extends Fragment {
 
             if (cCredit7ET.getText().toString().equals("")){
 
-                creditEmpty = true;
+                credit7Empty = true;
                 cCredit7ET.setError("Required");
             }else {
 
-                creditEmpty = false;
+                credit7Empty = false;
                 credit7 = Float.parseFloat(cCredit7ET.getText().toString());
             }
 
@@ -647,12 +708,25 @@ public class CGPAFragment extends Fragment {
 
             if (cSGPA_ET7.getText().toString().equals("")){
 
-                sgpaEmpty = true;
+                sgpa7Empty = true;
                 cSGPA_ET7.setError("Required");
             }else {
 
-                sgpaEmpty = false;
-                sgpa7 = Float.parseFloat(cSGPA_ET7.getText().toString());
+                sgpa7Empty = false;
+                float sgpaBoundary = Float.parseFloat(cSGPA_ET7.getText().toString());
+
+                if (sgpaBoundary > 5.0){
+
+                    cSGPA_ET7.setError("SGPA can't greater than must 5.0");
+                    cross7 = true;
+
+                }else {
+
+
+                    sgpa7 = Float.parseFloat(cSGPA_ET7.getText().toString());
+
+                    cross7 = false;
+                }
             }
 
 
@@ -669,7 +743,12 @@ public class CGPAFragment extends Fragment {
             if (!finish || permission6){
 
 
-                if ( creditEmpty == false && sgpaEmpty == false){
+                if ( !credit1Empty && !sgpa1Empty && !cross1 &&
+                        !credit2Empty && !sgpa2Empty && !cross2  &&
+                        !credit3Empty && !sgpa3Empty && !cross3 &&
+                        !credit4Empty && !sgpa4Empty && !cross4  &&
+                        !credit5Empty && !sgpa5Empty && !cross5 &&
+                        !credit6Empty && !sgpa6Empty && !cross6 ){
 
                     finish = true;
                     permission6 = true;
@@ -713,11 +792,11 @@ public class CGPAFragment extends Fragment {
 
             if (cCredit8ET.getText().toString().equals("")){
 
-                creditEmpty = true;
+                credit8Empty = true;
                 cCredit8ET.setError("Required");
             }else {
 
-                creditEmpty = false;
+                credit8Empty = false;
                 credit8 = Float.parseFloat(cCredit8ET.getText().toString());
             }
 
@@ -725,12 +804,25 @@ public class CGPAFragment extends Fragment {
 
             if (cSGPA_ET8.getText().toString().equals("")){
 
-                sgpaEmpty = true;
+                sgpa8Empty = true;
                 cSGPA_ET8.setError("Required");
             }else {
 
-                sgpaEmpty = false;
-                sgpa8 = Float.parseFloat(cSGPA_ET8.getText().toString());
+                sgpa8Empty = false;
+                float sgpaBoundary = Float.parseFloat(cSGPA_ET8.getText().toString());
+
+                if (sgpaBoundary > 5.0){
+
+                    cSGPA_ET8.setError("SGPA can't greater than must 5.0");
+                    cross8 = true;
+
+                }else {
+
+
+                    sgpa8 = Float.parseFloat(cSGPA_ET8.getText().toString());
+
+                    cross8 = false;
+                }
             }
 
 
@@ -747,7 +839,13 @@ public class CGPAFragment extends Fragment {
             if (!finish || permission7){
 
 
-                if ( creditEmpty == false && sgpaEmpty == false){
+                if ( !credit1Empty && !sgpa1Empty && !cross1 &&
+                        !credit2Empty && !sgpa2Empty && !cross2  &&
+                        !credit3Empty && !sgpa3Empty && !cross3 &&
+                        !credit4Empty && !sgpa4Empty && !cross4  &&
+                        !credit5Empty && !sgpa5Empty && !cross5 &&
+                        !credit6Empty && !sgpa6Empty && !cross6 &&
+                        !credit7Empty && !sgpa7Empty && !cross7  ){
 
                     finish = true;
                     permission7 = true;
@@ -792,11 +890,11 @@ public class CGPAFragment extends Fragment {
 
             if (cCredit9ET.getText().toString().equals("")){
 
-                creditEmpty = true;
+                credit9Empty = true;
                 cCredit9ET.setError("Required");
             }else {
 
-                creditEmpty = false;
+                credit9Empty = false;
                 credit9 = Float.parseFloat(cCredit9ET.getText().toString());
             }
 
@@ -804,12 +902,25 @@ public class CGPAFragment extends Fragment {
 
             if (cSGPA_ET9.getText().toString().equals("")){
 
-                sgpaEmpty = true;
+                sgpa9Empty = true;
                 cSGPA_ET9.setError("Required");
             }else {
 
-                sgpaEmpty = false;
-                sgpa9 = Float.parseFloat(cSGPA_ET9.getText().toString());
+                sgpa9Empty = false;
+                float sgpaBoundary = Float.parseFloat(cSGPA_ET9.getText().toString());
+
+                if (sgpaBoundary > 5.0){
+
+                    cSGPA_ET9.setError("SGPA can't greater than must 5.0");
+                    cross9 = true;
+
+                }else {
+
+
+                    sgpa9 = Float.parseFloat(cSGPA_ET9.getText().toString());
+
+                    cross9 = false;
+                }
             }
 
 
@@ -826,7 +937,14 @@ public class CGPAFragment extends Fragment {
             if (!finish || permission8){
 
 
-                if ( creditEmpty == false && sgpaEmpty == false){
+                if ( !credit1Empty && !sgpa1Empty && !cross1 &&
+                        !credit2Empty && !sgpa2Empty && !cross2  &&
+                        !credit3Empty && !sgpa3Empty && !cross3 &&
+                        !credit4Empty && !sgpa4Empty && !cross4  &&
+                        !credit5Empty && !sgpa5Empty && !cross5 &&
+                        !credit6Empty && !sgpa6Empty && !cross6 &&
+                        !credit7Empty && !sgpa7Empty && !cross7 &&
+                        !credit8Empty && !sgpa8Empty && !cross8 ){
 
                     finish = true;
                     permission8 = true;
@@ -873,11 +991,11 @@ public class CGPAFragment extends Fragment {
 
             if (cCredit10ET.getText().toString().equals("")){
 
-                creditEmpty = true;
+                credit10Empty = true;
                 cCredit10ET.setError("Required");
             }else {
 
-                creditEmpty = false;
+                credit10Empty = false;
                 credit10 = Float.parseFloat(cCredit10ET.getText().toString());
             }
 
@@ -885,12 +1003,25 @@ public class CGPAFragment extends Fragment {
 
             if (cSGPA_ET10.getText().toString().equals("")){
 
-                sgpaEmpty = true;
+                sgpa10Empty = true;
                 cSGPA_ET10.setError("Required");
             }else {
 
-                sgpaEmpty = false;
-                sgpa10 = Float.parseFloat(cSGPA_ET10.getText().toString());
+                sgpa10Empty = false;
+                float sgpaBoundary = Float.parseFloat(cSGPA_ET10.getText().toString());
+
+                if (sgpaBoundary > 5.0){
+
+                    cSGPA_ET10.setError("SGPA can't greater than must 5.0");
+                    cross10 = true;
+
+                }else {
+
+
+                    sgpa10 = Float.parseFloat(cSGPA_ET10.getText().toString());
+
+                    cross10 = false;
+                }
             }
 
 
@@ -907,7 +1038,15 @@ public class CGPAFragment extends Fragment {
             if (!finish || permission9){
 
 
-                if ( creditEmpty == false && sgpaEmpty == false){
+                if ( !credit1Empty && !sgpa1Empty && !cross1 &&
+                        !credit2Empty && !sgpa2Empty && !cross2  &&
+                        !credit3Empty && !sgpa3Empty && !cross3 &&
+                        !credit4Empty && !sgpa4Empty && !cross4  &&
+                        !credit5Empty && !sgpa5Empty && !cross5 &&
+                        !credit6Empty && !sgpa6Empty && !cross6 &&
+                        !credit7Empty && !sgpa7Empty && !cross7 &&
+                        !credit8Empty && !sgpa8Empty && !cross8 &&
+                        !credit9Empty && !sgpa9Empty && !cross9 ){
 
                     finish = true;
                     permission9 = true;
@@ -956,11 +1095,11 @@ public class CGPAFragment extends Fragment {
 
             if (cCredit11ET.getText().toString().equals("")){
 
-                creditEmpty = true;
+                credit11Empty = true;
                 cCredit11ET.setError("Required");
             }else {
 
-                creditEmpty = false;
+                credit11Empty = false;
                 credit11 = Float.parseFloat(cCredit11ET.getText().toString());
             }
 
@@ -968,12 +1107,25 @@ public class CGPAFragment extends Fragment {
 
             if (cSGPA_ET11.getText().toString().equals("")){
 
-                sgpaEmpty = true;
+                sgpa11Empty = true;
                 cSGPA_ET11.setError("Required");
             }else {
 
-                sgpaEmpty = false;
-                sgpa11 = Float.parseFloat(cSGPA_ET11.getText().toString());
+                sgpa11Empty = false;
+                float sgpaBoundary = Float.parseFloat(cSGPA_ET11.getText().toString());
+
+                if (sgpaBoundary > 5.0){
+
+                    cSGPA_ET11.setError("SGPA can't greater than must 5.0");
+                    cross11 = true;
+
+                }else {
+
+
+                    sgpa11 = Float.parseFloat(cSGPA_ET11.getText().toString());
+
+                    cross11 = false;
+                }
             }
 
 
@@ -990,7 +1142,16 @@ public class CGPAFragment extends Fragment {
             if (!finish || permission10){
 
 
-                if ( creditEmpty == false && sgpaEmpty == false){
+                if ( !credit1Empty && !sgpa1Empty && !cross1 &&
+                        !credit2Empty && !sgpa2Empty && !cross2  &&
+                        !credit3Empty && !sgpa3Empty && !cross3 &&
+                        !credit4Empty && !sgpa4Empty && !cross4  &&
+                        !credit5Empty && !sgpa5Empty && !cross5 &&
+                        !credit6Empty && !sgpa6Empty && !cross6 &&
+                        !credit7Empty && !sgpa7Empty && !cross7 &&
+                        !credit8Empty && !sgpa8Empty && !cross8 &&
+                        !credit9Empty && !sgpa9Empty && !cross9 &&
+                        !credit10Empty && !sgpa10Empty && !cross10 ){
 
                     finish = true;
                     permission10 = true;
@@ -1040,11 +1201,11 @@ public class CGPAFragment extends Fragment {
 
             if (cCredit12ET.getText().toString().equals("")){
 
-                creditEmpty = true;
+                credit12Empty = true;
                 cCredit12ET.setError("Required");
             }else {
 
-                creditEmpty = false;
+                credit12Empty = false;
                 credit12 = Float.parseFloat(cCredit12ET.getText().toString());
             }
 
@@ -1052,12 +1213,26 @@ public class CGPAFragment extends Fragment {
 
             if (cSGPA_ET12.getText().toString().equals("")){
 
-                sgpaEmpty = true;
+                sgpa12Empty = true;
                 cSGPA_ET12.setError("Required");
+
             }else {
 
-                sgpaEmpty = false;
-                sgpa12 = Float.parseFloat(cSGPA_ET12.getText().toString());
+                sgpa12Empty = false;
+                float sgpaBoundary = Float.parseFloat(cSGPA_ET12.getText().toString());
+
+                if (sgpaBoundary > 5.0){
+
+                    cSGPA_ET12.setError("SGPA can't greater than must 5.0");
+                    cross12 = true;
+
+                }else {
+
+
+                    sgpa12 = Float.parseFloat(cSGPA_ET12.getText().toString());
+
+                    cross12 = false;
+                }
 
                 doFinal();
             }
@@ -1076,7 +1251,17 @@ public class CGPAFragment extends Fragment {
             if (!finish || permission11){
 
 
-                if ( creditEmpty == false && sgpaEmpty == false){
+                if ( !credit1Empty && !sgpa1Empty && !cross1 &&
+                        !credit2Empty && !sgpa2Empty && !cross2  &&
+                        !credit3Empty && !sgpa3Empty && !cross3 &&
+                        !credit4Empty && !sgpa4Empty && !cross4  &&
+                        !credit5Empty && !sgpa5Empty && !cross5 &&
+                        !credit6Empty && !sgpa6Empty && !cross6 &&
+                        !credit7Empty && !sgpa7Empty && !cross7 &&
+                        !credit8Empty && !sgpa8Empty && !cross8 &&
+                        !credit9Empty && !sgpa9Empty && !cross9 &&
+                        !credit10Empty && !sgpa10Empty && !cross10 &&
+                        !credit11Empty && !sgpa11Empty && !cross11 ){
 
                     finish = true;
                     permission11 = true;
@@ -1145,39 +1330,66 @@ public class CGPAFragment extends Fragment {
     private void doFinal() {
 
 
-        finish = true;
-        permission11 = true;
-
-        float totalPoint1 = credit1 * sgpa1;
-        float totalPoint2 = credit2 * sgpa2;
-        float totalPoint3 = credit3 * sgpa3;
-        float totalPoint4 = credit4 * sgpa4;
-        float totalPoint5 = credit5 * sgpa5;
-        float totalPoint6 = credit6 * sgpa6;
-        float totalPoint7 = credit7 * sgpa7;
-        float totalPoint8 = credit8 * sgpa8;
-        float totalPoint9 = credit9 * sgpa9;
-        float totalPoint10 = credit10 * sgpa10;
-        float totalPoint11 = credit11 * sgpa11;
-        float totalPoint12 = credit12 * sgpa12;
-
-        float totalCredit = credit1 + credit2 + credit3 + credit4 + credit5 + credit6 + credit7 + credit8 +
-                credit9 + credit10 + credit11 + credit12;
-        float totalPoint = totalPoint1 + totalPoint2 + totalPoint3 + totalPoint4 + totalPoint5 + totalPoint6 +
-                totalPoint7 + totalPoint8 + totalPoint9 + totalPoint10 + totalPoint11 + totalPoint12;
-
-        float cgpa = totalPoint / totalCredit ;
-
-        float totalSGPA = sgpa1 + sgpa2 + sgpa3 + sgpa4 + sgpa5 + sgpa6 + sgpa7 + sgpa8 + sgpa9 + sgpa10 + sgpa11 + sgpa12;
+        if (!credit1Empty && !sgpa1Empty && !cross1 &&
+                !credit2Empty && !sgpa2Empty && !cross2  &&
+                !credit3Empty && !sgpa3Empty && !cross3 &&
+                !credit4Empty && !sgpa4Empty && !cross4  &&
+                !credit5Empty && !sgpa5Empty && !cross5 &&
+                !credit6Empty && !sgpa6Empty && !cross6 &&
+                !credit7Empty && !sgpa7Empty && !cross7 &&
+                !credit8Empty && !sgpa8Empty && !cross8 &&
+                !credit9Empty && !sgpa9Empty && !cross9 &&
+                !credit10Empty && !sgpa10Empty && !cross10 &&
+                !credit11Empty && !sgpa11Empty && !cross11 &&
+                !credit12Empty && !sgpa12Empty && !cross12 )
 
 
-        String finalTotalCredit = String.format("%.2f", totalCredit);
-        String finalTotalSGPA = String.format("%.2f", totalSGPA);
-        String finalCGPA = String.format("%.2f", cgpa);
+        {
+
+            finish = true;
+            permission11 = true;
+
+            float totalPoint1 = credit1 * sgpa1;
+            float totalPoint2 = credit2 * sgpa2;
+            float totalPoint3 = credit3 * sgpa3;
+            float totalPoint4 = credit4 * sgpa4;
+            float totalPoint5 = credit5 * sgpa5;
+            float totalPoint6 = credit6 * sgpa6;
+            float totalPoint7 = credit7 * sgpa7;
+            float totalPoint8 = credit8 * sgpa8;
+            float totalPoint9 = credit9 * sgpa9;
+            float totalPoint10 = credit10 * sgpa10;
+            float totalPoint11 = credit11 * sgpa11;
+            float totalPoint12 = credit12 * sgpa12;
+
+            float totalCredit = credit1 + credit2 + credit3 + credit4 + credit5 + credit6 + credit7 + credit8 +
+                    credit9 + credit10 + credit11 + credit12;
+            float totalPoint = totalPoint1 + totalPoint2 + totalPoint3 + totalPoint4 + totalPoint5 + totalPoint6 +
+                    totalPoint7 + totalPoint8 + totalPoint9 + totalPoint10 + totalPoint11 + totalPoint12;
+
+            float cgpa = totalPoint / totalCredit ;
+
+            float totalSGPA = sgpa1 + sgpa2 + sgpa3 + sgpa4 + sgpa5 + sgpa6 + sgpa7 + sgpa8 + sgpa9 + sgpa10 + sgpa11 + sgpa12;
 
 
-        ViewDialog2 alert2 = new ViewDialog2();
-        alert2.showDialog(getActivity(),12, finalTotalCredit, finalTotalSGPA, finalCGPA);
+            String finalTotalCredit = String.format("%.2f", totalCredit);
+            String finalTotalSGPA = String.format("%.2f", totalSGPA);
+            String finalCGPA = String.format("%.2f", cgpa);
+
+
+            ViewDialog2 alert2 = new ViewDialog2();
+            alert2.showDialog(getActivity(),12, finalTotalCredit, finalTotalSGPA, finalCGPA);
+
+
+
+        }else {
+
+
+            Toast.makeText(getContext(), "Error... Please check ", Toast.LENGTH_SHORT).show();
+        }
+
+
+
 
     }
 
@@ -1186,11 +1398,12 @@ public class CGPAFragment extends Fragment {
 
         if (cCredit1ET.getText().toString().equals("")){
 
-            creditEmpty = true;
+            credit1Empty = true;
             cCredit1ET.setError("Required");
+
         }else {
 
-            creditEmpty = false;
+            credit1Empty = false;
             credit1 = Float.parseFloat(cCredit1ET.getText().toString());
         }
 
@@ -1200,11 +1413,12 @@ public class CGPAFragment extends Fragment {
 
         if (cCredit2ET.getText().toString().equals("")){
 
-            creditEmpty = true;
+
+            credit2Empty = true;
             cCredit2ET.setError("Required");
         }else {
 
-            creditEmpty = false;
+            credit2Empty = false;
             credit2 = Float.parseFloat(cCredit2ET.getText().toString());
         }
 
@@ -1213,24 +1427,55 @@ public class CGPAFragment extends Fragment {
 
         if (cSGPA_ET1.getText().toString().equals("")){
 
-            sgpaEmpty = true;
+            sgpa1Empty = true;
             cSGPA_ET1.setError("Required");
+
         }else {
 
-            sgpaEmpty = false;
-            sgpa1 = Float.parseFloat(cSGPA_ET1.getText().toString());
+            sgpa1Empty = false;
+            float sgpaBoundary = Float.parseFloat(cSGPA_ET1.getText().toString());
+
+            if (sgpaBoundary > 5.0){
+
+                cSGPA_ET1.setError("SGPA can't greater than must 5.0");
+                cross1 = true;
+
+            }else {
+
+
+                sgpa1 = Float.parseFloat(cSGPA_ET1.getText().toString());
+                cross1 = false;
+            }
+
         }
 
 
 
         if (cSGPA_ET2.getText().toString().equals("")){
 
-            sgpaEmpty = true;
             cSGPA_ET2.setError("Required");
+            sgpa2Empty = true;
+
         }else {
 
-            sgpaEmpty = false;
-            sgpa2 = Float.parseFloat(cSGPA_ET2.getText().toString());
+            sgpa2Empty = false;
+            float sgpaBoundary = Float.parseFloat(cSGPA_ET2.getText().toString());
+
+            if (sgpaBoundary > 5.0){
+
+                cSGPA_ET2.setError("SGPA can't greater than must 5.0");
+                cross2 = true;
+
+            }else {
+
+
+                sgpa2 = Float.parseFloat(cSGPA_ET2.getText().toString());
+
+                cross2 = false;
+            }
+
+
+
         }
 
 
