@@ -1,0 +1,2 @@
+# CGPACalculator
+CGPA Calculator will help any university student to calculate their CGPA and SGPA. This calculator is simple and powerful CGPA calculator. User can easily calculate his/her any number of subject. CGPA Calculator helps students perform the calculation of the CGPA (Cumulative Grade Point System). Only this application will give the opportunity to calculate CGPA with Course and Semester to the user. User can Calculate his/her CGPA with number of course (maximum 15 course). Also user can calculate his/her CGPA with number of semester (maximum 12 semester).
